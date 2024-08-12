@@ -1,0 +1,19 @@
+  # 此技能配置均为作者F1xSky(修天)原创
+  # 此配置非抄袭他人，仅此借鉴他人写法
+  # 该配置均为免费公开使用，切勿将该配置盗卖
+  # 若你在其他地方购买了此配置，请及时联系作者
+  # 作者QQ：898451302
+FS-Flame_Domain:
+    mythicmobs-skill-id: FS-Flame_Domain
+    modifiers:
+    - damage
+    - cooldown
+    extra-skills:
+        FS-Flame_Domain:
+          Skills:
+            - effect:particleorbital{r=5;points=18;t=200;i=1;vy=100;oy=0.2;particle=Flame;repeat=200;repeatInterval=1} @self
+            - potion{type=fire_resistance;duration=400;level=0} @Self
+            - potion{type=strength;duration=400;level=0} @Self
+            - delay 30
+            - Ignite{ticks=100;repeat=400;repeatInterval=1} @EIR{r=5}
+            - effect:particles{p=Smoke_Normal;a=20;hs=0.1;vs=0.1;y=2.5;repeat=400;repeatInterval=1} @EIR{r=5}
