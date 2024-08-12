@@ -1,0 +1,20 @@
+FS-Black_Hole:
+    mythicmobs-skill-id: FS-Black_Hole
+    modifiers:
+    - damage
+    - cooldown
+    extra-skills:
+        FS-Black_Hole:
+          Skills:
+            - projectile{onTick=FS-Black_Hole-Tick;oh=FS-Black_Hole-Hit;ohb=FS-Black_Hole-Hit;v=30;i=1;hR=1;vR=1;hnp=true} @targetLocation
+        FS-Black_Hole-Tick:
+          Skills:
+            - effect:particles{p=Smoke_Large;amount=20;speed=0;hS=0.1;vS=0.1}
+            - sound{s=block.lever.click;p=2;v=0.4;repeat=49;repeatInterval=1} @targetLocation
+        FS-Black_Hole-Hit:
+          Skills:
+            - particles{p=Explosion_Large;repeat=49;repeatInterval=1}
+            - effect:particlesphere{p=Squid_Ink;amount=50;radius=5;repeat=49;repeatInterval=1;hR=0.5;vR=0.5}
+            - pull{to=true;v=8;repeat=49;repeatInterval=1} @eno{r=5}
+            - potion{type=blindness;duration=100;level=0} @eno{r=5}
+            - damage{a=3;repeat=49;repeatInterval=1} @eno{r=5}
