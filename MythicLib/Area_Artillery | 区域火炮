@@ -1,1 +1,28 @@
-
+FS-Area_Artillery:
+    mythicmobs-skill-id: FS-Area_Artillery
+    modifiers:
+    - damage
+    - cooldown
+    extra-skills:
+        FS-Area_Artillery:
+          Skills:
+            - projectile{onTick=FS-Area_Artillery-Tick;ohb=FS-Area_Artillery-Hit;se=false;v=30;i=1;hr=3;vR=0.5;hnp=true} @targetLocation
+        FS-Area_Artillery-Tick:
+          Skills:
+            - effect:particles{p=Cloud;amount=20;speed=0;hS=0.1;vS=0.1}
+        FS-Area_Artillery-Tick-Hit:
+          Skills:
+            - effect:particles{p=Cloud;amount=20;speed=0;hS=0.1;vS=0.1}
+        FS-Area_Artillery-Hit:
+          Skills:
+            - jump{v=1.5}
+            - effect:particleorbital{r=10;points=16;t=50;i=1;vy=100;oy=0.2;particle=Cloud} @Origin
+            - delay 15
+            - effect:particleorbital{r=10;points=16;t=50;i=1;vy=100;oy=0.2;particle=Cloud} @Origin
+            - pull{v=0;repeat=50;repeatInterval=1} @self
+            - delay 10
+            - effect:Glow{repeat=50;repeatInterval=1} @eno{r=10}
+            - projectile{onTick=FS-Area_Artillery-Tick-Hit;oe=FS-Area_Artillery-Hit-Damage;syo=5;v=30;i=1;hr=3;vR=0.5;HitTargetOnly=true} @eno{r=10}
+        FS-Area_Artillery-Hit-Damage:
+          Skills:
+            - explosion{yield=5}
