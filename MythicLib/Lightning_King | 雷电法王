@@ -1,0 +1,40 @@
+FS-Lightning_King:
+    mythicmobs-skill-id: FS-Lightning_King
+    modifiers:
+    - damage
+    - cooldown
+    extra-skills:
+        FS-Lightning_King:
+          Skills:
+            - effect:particleorbital{r=2;points=16;t=300;i=1;vy=20;particle=poof} @eir{r=10} ~onSpawn
+            - pull{to=true;v=0;origin=@selfeyelocation;repeat=300;repeatInterval=1} @eir{r=10}
+            - potion{type=resistance;duration=300;level=9} @self
+            - potion{type=slowness;duration=300;level=4} @self
+            - jump{v=1}
+            - delay 15
+            - pull{v=0;repeat=300;repeatInterval=1} @self
+            - delay 50
+            - effect:Lightning @eir{r=10}
+            - potion{type=wither;duration=150;level=4} @eir{r=10}
+            - delay 30
+            - effect:Lightning @eir{r=10}
+            - potion{type=mining_fatigue;duration=150;level=4} @eir{r=10}
+            - delay 50
+            - effect:Lightning @eir{r=10}
+            - potion{type=unluck;duration=150;level=4} @eir{r=10}
+            - delay 10
+            - effect:Lightning @eir{r=10}
+            - potion{type=bad_omen;duration=150;level=4} @eir{r=10}
+            - delay 10
+            - effect:Lightning @eir{r=10}
+            - potion{type=slowness;duration=150;level=4} @eir{r=10}
+            - delay 50
+            - effect:Lightning @eir{r=10}
+            - potion{type=weakness;duration=150;level=4} @eir{r=10}
+            - delay 30
+            - effect:Lightning @eir{r=10}
+            - potion{type=nausea;duration=150;level=4} @eir{r=10}
+            - delay 50
+            - effect:Lightning @eir{r=10}
+            - potion{type=blindness;duration=150;level=4} @eir{r=10}
+            - ignite{duration=150} @eir{r=10}
